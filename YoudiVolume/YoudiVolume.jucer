@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="jqCkrU" name="YoudiVolume" projectType="audioplug" useAppConfig="0"
-              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1">
+              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" headerPath="Config/">
   <MAINGROUP id="hvK8AQ" name="YoudiVolume">
     <GROUP id="{773CECC9-FDAC-3E14-5588-2C4BD91FE7C2}" name="Source">
+      <GROUP id="{6F1F7084-FBC4-0175-A7F5-A6C8C7163C2B}" name="Config">
+        <FILE id="vfrlyg" name="Config.h" compile="0" resource="0" file="Source/Config.h"/>
+      </GROUP>
       <FILE id="xQwOM6" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
       <FILE id="CNu3U0" name="PluginProcessor.h" compile="0" resource="0"

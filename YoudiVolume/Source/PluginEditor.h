@@ -17,7 +17,7 @@
 class YoudiVolumeAudioProcessorEditor  : public juce::AudioProcessorEditor
 {
 public:
-    YoudiVolumeAudioProcessorEditor (YoudiVolumeAudioProcessor&);
+    YoudiVolumeAudioProcessorEditor (YoudiVolumeAudioProcessor&, juce::AudioProcessorValueTreeState&);
     ~YoudiVolumeAudioProcessorEditor() override;
 
     //==============================================================================
@@ -28,6 +28,14 @@ private:
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
     YoudiVolumeAudioProcessor& audioProcessor;
+
+    juce::AudioProcessorValueTreeState& apvts;
+
+    //GUI components
+    juce::Slider sldVolume;
+
+    //Parameter-Component attachments
+    std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> attchVolume;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (YoudiVolumeAudioProcessorEditor)
 };

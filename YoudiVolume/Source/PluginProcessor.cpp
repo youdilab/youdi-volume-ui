@@ -20,7 +20,8 @@ YoudiVolumeAudioProcessor::YoudiVolumeAudioProcessor()
                        .withOutput ("Output", juce::AudioChannelSet::stereo(), true)
                      #endif
                        )
-#endif
+#endif    
+    ,parameters(*this,nullptr,juce::Identifier("APVTS"),createParameterLayout())
 {
 }
 
@@ -166,7 +167,7 @@ bool YoudiVolumeAudioProcessor::hasEditor() const
 
 juce::AudioProcessorEditor* YoudiVolumeAudioProcessor::createEditor()
 {
-    return new YoudiVolumeAudioProcessorEditor (*this);
+    return new YoudiVolumeAudioProcessorEditor (*this,parameters);
 }
 
 //==============================================================================

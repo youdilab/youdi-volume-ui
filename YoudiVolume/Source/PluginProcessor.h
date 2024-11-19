@@ -9,6 +9,7 @@
 #pragma once
 
 #include <JuceHeader.h>
+#include "Config.h"
 
 //==============================================================================
 /**
@@ -54,6 +55,25 @@ public:
     void setStateInformation (const void* data, int sizeInBytes) override;
 
 private:
+    juce::AudioProcessorValueTreeState parameters;
+
+    //Adding parameters to layout
+    juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout()
+    {
+        juce::AudioProcessorValueTreeState::ParameterLayout params;
+
+        //Lambda function to add juce::AudioParameterFloat
+        const auto addFloatParameter = [&](const parameters::audioParameterFloat& paramFloat)
+        {
+            params.add(std::make_unique<juce::AudioParameterFloat>(paramFloat.id, paramFloat.name, paramFloat.minValue, paramFloat.maxValue, paramFloat.defaultValue));
+        };
+
+        //Adding parameters using above lambda functions.
+        addFloatParameter(parameters::volume);
+
+        return params;
+    }
+
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (YoudiVolumeAudioProcessor)
 };
