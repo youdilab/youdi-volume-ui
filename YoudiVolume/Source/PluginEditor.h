@@ -37,5 +37,8 @@ private:
     //Parameter-Component attachments
     std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> attchVolume;
 
+    //Background Image
+    juce::Image imgPluginBg;
+
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (YoudiVolumeAudioProcessorEditor)
 };

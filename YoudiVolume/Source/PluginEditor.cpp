@@ -14,10 +14,14 @@ YoudiVolumeAudioProcessorEditor::YoudiVolumeAudioProcessorEditor (YoudiVolumeAud
     : AudioProcessorEditor (&p), audioProcessor (p)
     , apvts(valueTree)
     , sldVolume(juce::Slider::SliderStyle::RotaryHorizontalVerticalDrag,juce::Slider::TextEntryBoxPosition::TextBoxBelow)
+    , imgPluginBg(juce::ImageFileFormat::loadFrom(
+        juce::MemoryInputStream(BinaryData::Background_png,
+            BinaryData::Background_pngSize,
+            false)))
 {
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
-    setSize (600, 650);
+    setSize (dimensions::pluginWidth, dimensions::pluginHeight);
 
     addAndMakeVisible(sldVolume);
 
@@ -29,9 +33,9 @@ YoudiVolumeAudioProcessorEditor::~YoudiVolumeAudioProcessorEditor()
 }
 
 //==============================================================================
-void YoudiVolumeAudioProcessorEditor::paint (juce::Graphics& g)
+void YoudiVolumeAudioProcessorEditor::paint(juce::Graphics& g)
 {
-    
+    g.drawImage(imgPluginBg, getLocalBounds().toFloat(),juce::RectanglePlacement::stretchToFit,false);
 }
 
 void YoudiVolumeAudioProcessorEditor::resized()

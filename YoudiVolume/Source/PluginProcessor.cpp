@@ -136,6 +136,10 @@ void YoudiVolumeAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, 
     auto totalNumInputChannels  = getTotalNumInputChannels();
     auto totalNumOutputChannels = getTotalNumOutputChannels();
 
+    int bufferSamplesCount = buffer.getNumSamples();
+
+    float volume = *parameters.getRawParameterValue(parameters::volume.id);
+
     // In case we have more outputs than inputs, this code clears any output
     // channels that didn't contain input data, (because these aren't
     // guaranteed to be empty - they may contain garbage).
@@ -156,6 +160,7 @@ void YoudiVolumeAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, 
         auto* channelData = buffer.getWritePointer (channel);
 
         // ..do something to the data...
+        juce::FloatVectorOperations::multiply(channelData, volume, bufferSamplesCount);
     }
 }
 
