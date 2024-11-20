@@ -13,7 +13,7 @@
 YoudiVolumeAudioProcessorEditor::YoudiVolumeAudioProcessorEditor (YoudiVolumeAudioProcessor& p, juce::AudioProcessorValueTreeState& valueTree)
     : AudioProcessorEditor (&p), audioProcessor (p)
     , apvts(valueTree)
-    , sldVolume(juce::Slider::SliderStyle::Rotary,juce::Slider::TextEntryBoxPosition::TextBoxBelow)
+    , sldVolume(juce::Slider::SliderStyle::RotaryHorizontalVerticalDrag,juce::Slider::TextEntryBoxPosition::TextBoxBelow)
 {
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
