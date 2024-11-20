@@ -40,5 +40,5 @@ void YoudiVolumeAudioProcessorEditor::paint(juce::Graphics& g)
 
 void YoudiVolumeAudioProcessorEditor::resized()
 {
-    sldVolume.setBounds(110, 120, 380, 380);
+    sldVolume.setBounds(dimensions::xSldVolume, dimensions::ySldVolume, dimensions::widthSldVolume, dimensions::heightSldVolume);
 }
