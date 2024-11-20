@@ -13,7 +13,7 @@
 YoudiVolumeAudioProcessorEditor::YoudiVolumeAudioProcessorEditor (YoudiVolumeAudioProcessor& p, juce::AudioProcessorValueTreeState& valueTree)
     : AudioProcessorEditor (&p), audioProcessor (p)
     , apvts(valueTree)
-    , sldVolume(juce::Slider::SliderStyle::RotaryHorizontalVerticalDrag,juce::Slider::TextEntryBoxPosition::TextBoxBelow)
+    , sldVolume(juce::Slider::SliderStyle::RotaryHorizontalVerticalDrag,juce::Slider::TextEntryBoxPosition::NoTextBox)
     , imgPluginBg(juce::ImageFileFormat::loadFrom(
         juce::MemoryInputStream(BinaryData::Background_png,
             BinaryData::Background_pngSize,
@@ -23,6 +23,9 @@ YoudiVolumeAudioProcessorEditor::YoudiVolumeAudioProcessorEditor (YoudiVolumeAud
     // editor's size to whatever you need it to be.
     setSize (dimensions::pluginWidth, dimensions::pluginHeight);
 
+    volKnobLooknFeel = std::make_unique<VolumeKnobLooknFeel>();
+    sldVolume.setLookAndFeel(volKnobLooknFeel.get());
+
     addAndMakeVisible(sldVolume);
 
     attchVolume.reset(new juce::AudioProcessorValueTreeState::SliderAttachment(apvts, parameters::volume.id, sldVolume));
@@ -30,6 +33,7 @@ YoudiVolumeAudioProcessorEditor::YoudiVolumeAudioProcessorEditor (YoudiVolumeAud
 
 YoudiVolumeAudioProcessorEditor::~YoudiVolumeAudioProcessorEditor()
 {
+    sldVolume.setLookAndFeel(nullptr);
 }
 
 //==============================================================================

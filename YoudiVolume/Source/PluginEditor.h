@@ -10,6 +10,7 @@
 
 #include <JuceHeader.h>
 #include "PluginProcessor.h"
+#include "VolumeKnobLooknFeel.h"
 
 //==============================================================================
 /**
@@ -39,6 +40,9 @@ private:
 
     //Background Image
     juce::Image imgPluginBg;
+
+    //Knob Look and Feel
+    std::unique_ptr<VolumeKnobLooknFeel> volKnobLooknFeel;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (YoudiVolumeAudioProcessorEditor)
 };

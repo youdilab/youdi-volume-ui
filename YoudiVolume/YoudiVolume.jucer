@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="jqCkrU" name="YoudiVolume" projectType="audioplug" useAppConfig="0"
-              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" headerPath="Config/">
+              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" headerPath="Config/&#10;LooknFeel/&#10;">
   <MAINGROUP id="hvK8AQ" name="YoudiVolume">
     <GROUP id="{3D4C5F73-B6F3-0A99-66CB-1266C843F065}" name="GUI">
-      <FILE id="YP71WU" name="Background.png" compile="0" resource="1" file="Resources/VolumePluginDesign/Background.png"/>
-      <FILE id="RuqvgD" name="Knob.png" compile="0" resource="1" file="Resources/VolumePluginDesign/Knob.png"/>
+      <FILE id="eKwBNv" name="Background.png" compile="0" resource="1" file="Resources/Background.png"/>
+      <FILE id="teGW2q" name="Knob.png" compile="0" resource="1" file="Resources/Knob.png"/>
     </GROUP>
     <GROUP id="{773CECC9-FDAC-3E14-5588-2C4BD91FE7C2}" name="Source">
+      <GROUP id="{6F62DF7C-A500-194C-428B-0A2C5ABC1E4C}" name="LooknFeel">
+        <FILE id="CLDCXg" name="VolumeKnobLooknFeel.h" compile="0" resource="0"
+              file="Source/VolumeKnobLooknFeel.h"/>
+      </GROUP>
       <GROUP id="{6F1F7084-FBC4-0175-A7F5-A6C8C7163C2B}" name="Config">
         <FILE id="vfrlyg" name="Config.h" compile="0" resource="0" file="Source/Config.h"/>
       </GROUP>

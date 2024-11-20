@@ -23,7 +23,7 @@ namespace parameters
         const float defaultValue;
     };
 
-    static const audioParameterFloat volume{"volume", "Volume", 0.0f, 1.0f, 0.5f};
+    static const audioParameterFloat volume{"volume", "Volume", 0.0f, 1.0f, 0.0f};
 };
 
 namespace dimensions
