@@ -24,6 +24,15 @@ YoudiVolumeAudioProcessorEditor::YoudiVolumeAudioProcessorEditor (YoudiVolumeAud
     setSize (dimensions::pluginWidth, dimensions::pluginHeight);
 
     addAndMakeVisible(sldVolume);
+    addAndMakeVisible(lblVolume);
+    
+    lblVolume.setValue(0);
+
+    sldVolume.onValueChange = [this]()
+    {        
+        lblVolume.setValue(sldVolume.getValue() * 100);
+        lblVolume.repaint();
+    };
 
     attchVolume.reset(new juce::AudioProcessorValueTreeState::SliderAttachment(apvts, parameters::volume.id, sldVolume));
 }
@@ -42,4 +51,5 @@ void YoudiVolumeAudioProcessorEditor::paint(juce::Graphics& g)
 void YoudiVolumeAudioProcessorEditor::resized()
 {
     sldVolume.setBounds(dimensions::xSldVolume, dimensions::ySldVolume, dimensions::widthSldVolume, dimensions::heightSldVolume);
+    lblVolume.setBounds(dimensions::xLblVolume,dimensions::yLblVolume,dimensions::widthLblVolume,dimensions::heightLblVolume);
 }

@@ -7,12 +7,15 @@
       <FILE id="eKwBNv" name="Background.png" compile="0" resource="1" file="Resources/Background.png"/>
       <FILE id="OdiL9Q" name="Background3D.png" compile="0" resource="1"
             file="Resources/Background3D.png"/>
+      <FILE id="zt5OVX" name="DigitSprite3D.png" compile="0" resource="1"
+            file="Resources/DigitSprite3D.png"/>
       <FILE id="teGW2q" name="Knob.png" compile="0" resource="1" file="Resources/Knob.png"/>
       <FILE id="Y9oGec" name="KnobSprite3D.png" compile="0" resource="1"
             file="Resources/KnobSprite3D.png"/>
     </GROUP>
     <GROUP id="{773CECC9-FDAC-3E14-5588-2C4BD91FE7C2}" name="Source">
       <GROUP id="{FF3EAAF5-D280-9671-EFC0-892D3B2B5DBE}" name="UiComponents">
+        <FILE id="LtyGfB" name="SsdDigit.h" compile="0" resource="0" file="Source/SsdDigit.h"/>
         <FILE id="DUX4Ov" name="VolumeKnobOne.h" compile="0" resource="0" file="Source/VolumeKnobOne.h"/>
       </GROUP>
       <GROUP id="{6F62DF7C-A500-194C-428B-0A2C5ABC1E4C}" name="LooknFeel">

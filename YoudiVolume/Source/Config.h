@@ -37,4 +37,9 @@ namespace dimensions
     static const float ySldVolume = 244/ scale_factor;
     static const float widthSldVolume = 354/ scale_factor;
     static const float heightSldVolume = 339/ scale_factor;
+
+    static const float xLblVolume = 421 / scale_factor;
+    static const float yLblVolume = 653 / scale_factor;
+    static const float widthLblVolume = 248 / scale_factor;
+    static const float heightLblVolume = 129 / scale_factor;
 }
