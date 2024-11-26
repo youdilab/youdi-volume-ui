@@ -15,8 +15,8 @@ YoudiVolumeAudioProcessorEditor::YoudiVolumeAudioProcessorEditor (YoudiVolumeAud
     , apvts(valueTree)
     , sldVolume(juce::Slider::SliderStyle::RotaryHorizontalVerticalDrag,juce::Slider::TextEntryBoxPosition::NoTextBox)
     , imgPluginBg(juce::ImageFileFormat::loadFrom(
-        juce::MemoryInputStream(BinaryData::Background_png,
-            BinaryData::Background_pngSize,
+        juce::MemoryInputStream(BinaryData::Background3D_png,
+            BinaryData::Background3D_pngSize,
             false)))
 {
     // Make sure that before the constructor has finished, you've set the
