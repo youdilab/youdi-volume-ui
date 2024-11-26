@@ -11,6 +11,7 @@
 #include <JuceHeader.h>
 #include "PluginProcessor.h"
 #include "VolumeKnobLooknFeel.h"
+#include "VolumeKnobOne.h"
 
 //==============================================================================
 /**
@@ -33,7 +34,7 @@ private:
     juce::AudioProcessorValueTreeState& apvts;
 
     //GUI components
-    juce::Slider sldVolume;
+    VolumeKnobOne sldVolume;
 
     //Parameter-Component attachments
     std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> attchVolume;

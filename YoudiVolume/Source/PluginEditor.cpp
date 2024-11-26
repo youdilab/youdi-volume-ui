@@ -23,9 +23,6 @@ YoudiVolumeAudioProcessorEditor::YoudiVolumeAudioProcessorEditor (YoudiVolumeAud
     // editor's size to whatever you need it to be.
     setSize (dimensions::pluginWidth, dimensions::pluginHeight);
 
-    volKnobLooknFeel = std::make_unique<VolumeKnobLooknFeel>();
-    sldVolume.setLookAndFeel(volKnobLooknFeel.get());
-
     addAndMakeVisible(sldVolume);
 
     attchVolume.reset(new juce::AudioProcessorValueTreeState::SliderAttachment(apvts, parameters::volume.id, sldVolume));

@@ -28,11 +28,13 @@ namespace parameters
 
 namespace dimensions
 {
-    static const float pluginWidth = 266.25;
-    static const float pluginHeight = 234.75;
+    static const float scale_factor = 1.5;
 
-    static const float xSldVolume = 55;
-    static const float ySldVolume = 60;
-    static const float widthSldVolume = 190;
-    static const float heightSldVolume = 190;
+    static const float pluginWidth = 1065/ scale_factor;
+    static const float pluginHeight = 939/ scale_factor;
+
+    static const float xSldVolume = 356/ scale_factor;
+    static const float ySldVolume = 244/ scale_factor;
+    static const float widthSldVolume = 354/ scale_factor;
+    static const float heightSldVolume = 339/ scale_factor;
 }
